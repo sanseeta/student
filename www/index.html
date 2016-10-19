@@ -7,6 +7,7 @@
 			$(document).ready(function(){
 				$("#login").click(function(){
 					var url='http://amulya.hol.es/api/index.php?tag=log&user='+document.getElementById('user').value+
+					'&phone='+document.getElementById('phone').value+
 					'&pass='+document.getElementById('pass').value;
 					 $.getJSON(url,function(result){
 						if(result.check=="True")
@@ -20,6 +21,7 @@
 				});
 				$("#register").click(function(){
 					var url='http://amulya.hol.es/api/index.php?tag=reg&user='+document.getElementById('user').value+
+					'&phone='+document.getElementById('phone').value+
 					'&pass='+document.getElementById('pass').value;
 					$.getJSON(url,function(result){
 						if(result.check=="True")
