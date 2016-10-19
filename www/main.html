@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Login and Register</title>
+		<link rel="stylesheet" href="css/style.css"></link>
+		<script src="js/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				document.getElementById("greet").innerHTML="Howdy "+
+					localStorage.getItem('user')+",";
+				$("#logout").click(function(){
+					localStorage.removeItem('user');
+					window.open('index.html','_parent');
+				});
+				
+				$("#chat").click(function(){
+					window.open('chat.html','_parent');
+				});
+
+				$("#geo").click(function(){
+					var x = document.getElementById("myGeo");
+					if (navigator.geolocation) 
+					{
+						x.innerHTML="Plz Wait..."
+					    navigator.geolocation.getCurrentPosition(showPosition);
+					} 
+					else 
+					{
+					       x.innerHTML = "Geolocation is not supported by this browser.";
+					}
+					function showPosition(position) {
+					    x.innerHTML = "Latitude: " + position.coords.latitude +
+					    "<br>Longitude: " + position.coords.longitude;
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="myForm">
+			<h1 id="greet"></h1>
+			<h3 id="myGeo"></h3>
+			<button id="geo">Fetch Geo</button><br/>
+			<button id="chat">Chat Portal</button><br/>
+			<button id="logout">LogOut</button><br/>
+		</div>
+	</body>
+</html>
