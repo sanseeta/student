@@ -2,6 +2,7 @@
   <name>Student Guide</name>
   <description>This is the application developed for the project.</description>
   <author href="http://phonegap.com" email="support@phonegap.com">Amu and Sansu</author>
+  <preference name="windows-identity-name" value="PhonegapBuild.PGBDeveloper" />
   <content src="index.html"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="android-minSdkVersion" value="14"/>
